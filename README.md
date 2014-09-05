@@ -1,8 +1,8 @@
 # The Anti-Social Network
 
-Are you tired of not having online friends? Can't stand the fact that only the cool kids have all the friends and "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had many friends to love all your silly and pointless postings?
+Are you tired of not having online friends? Can't you stand the fact that only the cool kids have all the friends and "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had many friends to love all your silly and pointless postings?
 
-With the Anti-Social Network your problems are over! Get as many as friends you need to feel good about yourself! Guarantee that all your posts are going to be acclaimed by the public! Register Today!
+Your problems are over! Get as many as friends as you need to feel good about yourself! Guarantee that all your posts are going to be acclaimed by the public! Register Today!
 
 
 
