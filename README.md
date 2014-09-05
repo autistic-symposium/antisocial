@@ -10,7 +10,6 @@ With the Anti-Social Network your problems are over! Get as many as friends you 
 
 ![](http://i.imgur.com/PScsVh9.png)
 
-![](http://i.imgur.com/PScsVh9.png)
 
 ![](http://i.imgur.com/xE7u9sl.png)
 
