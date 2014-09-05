@@ -1,12 +1,18 @@
 # The Anti-Social Network
 
-Are you tired of not having online friends? Can't you stand the fact that only the cool kids have all the friends and "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had many friends to love all your silly and pointless postings?
+### Are you tired of not having online friends?
 
-Your problems are over! Get as many as friends as you need to feel good about yourself! Guarantee that all your posts are going to be acclaimed by the public! Register Today!
+Can't you stand the fact that only the cool kids have all the friends and "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had many friends to love all your silly and pointless postings?
 
-Posts are not limited to 140 characters and they accept rich text!
+###Your problems are over!
+
+Get as many as friends as you need to feel good about yourself! Guarantee that all your posts are going to be acclaimed by the public! Register Today!
 
 
+### Posts are not limited to 140 characters and you can write in rich text!
+
+
+### Screenshots:
 
 ![](http://i.imgur.com/rfLesjW.png)
 
@@ -27,15 +33,15 @@ Posts are not limited to 140 characters and they accept rich text!
 The Anti-Social Network was built on Flask&Python. The License is MIT, feel free to play:
 
 
-* Start your virtual environment.
+#### Start your virtual environment.
 
-* Import the dependences:
+#### Import the dependences:
 
 ```
 (venv) $ pip install -r requirements/*
 ```
 
-* Import environment variables for user authentications (this can also be added to your .bash):
+####Import environment variables for user authentications (this can also be added to your .bash):
 
 ```
 (venv) $ export MAIL_USERNAME=<Gmail username>
@@ -44,7 +50,7 @@ The Anti-Social Network was built on Flask&Python. The License is MIT, feel free
 (venv) $ export SECRET_KEY=<choose-a-secrecy>
 ```
 
-* Run!
+#### Run!
 
 ```
 $ python manage.py runserver
