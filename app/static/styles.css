@@ -7,7 +7,7 @@ body {
 }
 h1 {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-    font-size: 60px;
+    font-size: 300%;
     line-height: 65px;
     text-align: right;
 }
@@ -95,4 +95,15 @@ div.pagination {
 }
 .label{
     font-size: 0.5em
+}
+
+.post-body h1 {
+    font-size: 130%;
+    text-align: left;
+}
+.post-body h2 {
+    font-size: 120%;
+}
+.post-body h3 {
+    font-size: 110%;
 }

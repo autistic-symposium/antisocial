@@ -1,12 +1,12 @@
 # The Anti-Social Network
 
-### Are you tired of not having online friends?
+### Are you tired of not having enough online followers in your social networks?
 
-Can't you stand the fact that only the cool kids have all the friends and "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had many friends to love all your silly and pointless postings?
+Can't you stand the fact that only the cool kids have are popular and have all the "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had more friends to love all your pointless posts?
 
 ###Your problems are over!
 
-Get as many as friends as you need to feel good about yourself! Guarantee that all your posts are going to be acclaimed by the public! Register Today!
+Get as many friends as you need to feel good about yourself again! Register Today!
 
 
 ### Posts are not limited to 140 characters and you can write in rich text!
