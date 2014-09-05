@@ -6,6 +6,7 @@ from flask.ext.wtf import Form
 from wtforms import StringField, TextAreaField, BooleanField, SelectField,\
     SubmitField
 from wtforms.validators import Required, Length, Email, Regexp
+from flask.ext.pagedown.fields import PageDownField
 from wtforms import ValidationError
 from ..models import Role, User
 
@@ -54,5 +55,8 @@ class EditProfileAdminForm(Form):
 
 # For for the blog post
 class PostForm(Form):
-    body = TextAreaField("Do you have something to say?", validators=[Required()])
+    # without rich text
+    #body = TextAreaField("Do you have something to say? (Try in Rich Text!)", validators=[Required()])
+    # with rich text
+    body = PageDownField("Do you have something to say? (Try in Rich Text!)", validators=[Required()])
     submit = SubmitField('Say it!')

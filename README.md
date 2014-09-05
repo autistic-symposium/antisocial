@@ -4,6 +4,8 @@ Are you tired of not having online friends? Can't you stand the fact that only t
 
 Your problems are over! Get as many as friends as you need to feel good about yourself! Guarantee that all your posts are going to be acclaimed by the public! Register Today!
 
+Posts are not limited to 140 characters and they accept rich text!
+
 
 
 ![](http://i.imgur.com/rfLesjW.png)

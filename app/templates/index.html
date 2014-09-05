@@ -9,7 +9,7 @@
 	{% if current_user.is_authenticated() %}
     	<h1>Hello, {{ current_user.username }}</h1>
 	    {{ wtf.quick_form(form) }}
-	{% else %}<h1> Hello, Person-without-friends</h1>
+	{% else %}<h1> Hello, Person-with-no-friends</h1>
 	{% endif %}
 {% include '_posts.html' %}
 
@@ -20,4 +20,9 @@
 {% endif %}
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
 {% endblock %}

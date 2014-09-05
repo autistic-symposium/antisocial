@@ -12,8 +12,14 @@ import hashlib
 # through these two functions
 from werkzeug.security import generate_password_hash, check_password_hash
 
+# for hashing
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app, request
+
+# for rich text
+from markdown import markdown
+import bleach
+
 from flask.ext.login import UserMixin, AnonymousUserMixin
 from . import db, login_manager
 
@@ -246,6 +252,8 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     # db .Text gives no limitation on the length
     body = db.Column(db.Text)
+    # rich text
+    body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
@@ -264,6 +272,29 @@ class Post(db.Model):
             author=u)
             db.session.add(p)
             db.session.commit()
+
+
+    # rich text
+    @staticmethod
+    def on_changed_body(target, value, oldvalue, initiator):
+        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
+                        'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul',
+                        'h1', 'h2', 'h3', 'p']
+        target.body_html = bleach.linkify(bleach.clean(
+            markdown(value, output_format='html'),
+            tags=allowed_tags, strip=True))
+
+
+# rich text event listener: it will automatically be invoked whenever
+# the body field on any instance of the class is set to a new value
+# The conversion is done in three steps: first the markdown() function does
+# an initial conversion to HTML. The result is passed to clean(), along with
+# a list of approved HTML tags (removes any tag that are not in the whitelist).
+# The final conversion is done with linkify(), that converts any URL written
+# in plain text into a proper <a>
+db.event.listen(Post.body, 'set', Post.on_changed_body)
+
+
 
 
 """
