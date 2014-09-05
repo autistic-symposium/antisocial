@@ -38,7 +38,7 @@ The Anti-Social Network was built on Flask&Python. The License is MIT, feel free
 ```
 (venv) $ export MAIL_USERNAME=<Gmail username>
 (venv) $ export MAIL_PASSWORD=<Gmail password>
-(venv) $ export FLASKY_ADMIN=<your-email-address>
+(venv) $ export ANTISOCIAL_ADMIN=<your-email-address>
 (venv) $ export SECRET_KEY=<choose-a-secrecy>
 ```
 
