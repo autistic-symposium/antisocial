@@ -15,7 +15,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 """
 class Config:
 
-    SECRET_KEY = os.environ.get('SECRET_KEY') 
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
@@ -28,16 +28,17 @@ class Config:
     ANTISOCIAL_MAIL_SUBJECT_PREFIX = '[The Anti-Social Network]'
     ANTISOCIAL_MAIL_SENDER = 'The Anti-Social Network Admin <thesuperantisocialnetwork@gmail.com>'
     ANTISOCIAL_ADMIN = os.environ.get('ANTISOCIAL_ADMIN')
+    ANTISOCIAL_POSTS_PER_PAGE = 20
 
 
-    #  takes an application instance as as argument	
+    #  takes an application instance as as argument
     @staticmethod
     def init_app(app):
         pass
 
 
 
-""" 
+"""
 	The additional config classes define settings that are specific to a configuration.
 	For instance, SQLALCHEMY_DATABASE_URI is assigned different values under each of the configurations (different databases for each situation).
 """

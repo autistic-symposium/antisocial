@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
 
 {% block title %}The Anti-Social Network{% endblock %}
 
@@ -11,6 +12,12 @@
 	{% else %}<h1> Hello, Person-without-friends</h1>
 	{% endif %}
 {% include '_posts.html' %}
+
+{% if pagination %}
+<div class="pagination">
+{{macros.pagination_widget(pagination, '.index')}}
+</div>
+{% endif %}
 </div>
 
 {% endblock %}

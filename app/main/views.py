@@ -2,7 +2,7 @@
     In the MVC paradigm, here we have the main views to the user.
 """
 
-from flask import render_template, redirect, url_for, abort, flash
+from flask import render_template, redirect, url_for, abort, flash, request, current_app
 from flask.ext.login import login_required, current_user
 from . import main
 from .forms import EditProfileForm, EditProfileAdminForm, PostForm
@@ -16,13 +16,23 @@ from ..decorators import admin_required
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = PostForm()
+
     if form.validate_on_submit():
         post = Post(body=form.body.data,
                     author=current_user._get_current_object())
         db.session.add(post)
         return redirect(url_for('.index'))
-    posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html', form=form, posts=posts)
+
+    # adding paginating to the posts to load a single page of records,
+    # the call to all() is replaced with SQLAlchemy paginate(), this
+    # method takes the page number as the argument, an optional is per_page
+    # to indicate the size of page
+    page = request.args.get('page', 1, type=int)
+    pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page, per_page=current_app.config['ANTISOCIAL_POSTS_PER_PAGE'],
+        error_out=False)
+    posts = pagination.items
+    return render_template('index.html', form=form, posts=posts, pagination=pagination)
 
 
 
