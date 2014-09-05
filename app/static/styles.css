@@ -1,9 +1,10 @@
 body {
     font-family: 'Vollkorn', Georgia, Times, serif;
+    text-decoration: none ! important;
     font-size: 18px;
     line-height: 25px;
     background: url('./g.png');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 h1 {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
@@ -25,7 +26,7 @@ ul.posts {
     border-top: 1px solid #e0e0e0;
 }
 ul.posts li.post {
-    padding: 6px;
+    padding: 8px;
     border-bottom: 1px solid #e0e0e0;
 }
 ul.posts li.post:hover {
@@ -43,16 +44,20 @@ div.post-thumbnail {
 div.post-content {
     margin-left: 48px;
     min-height: 48px;
-
 }
 div.post-footer {
     text-align: right;
 }
-
+div.pagination {
+    width: 100%;
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
+}
 .btn {
     background: #FF9966;
     background-image: none;
-    border:none;
+    border: none;
     color: #fff;
     letter-spacing: 1px;
     font-weight: 800;
@@ -66,44 +71,33 @@ div.post-footer {
     background: #333;
     color: #fff;
 }
-
-div.pagination {
-    width: 100%;
-    text-align: right;
-    padding: 0px;
-    margin: 0px;
-}
-
 .navbar-anti .navbar-inner {
     background: #f36c00;
     background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f68a28), color-stop(100%, #f36c00));
-    background: -webkit-linear-gradient(top, #f68a28,#f36c00);
-    background: -antioz-linear-gradient(top, #f68a28,#f36c00);
-    background: -o-linear-gradient(top, #f68a28,#f36c00);
-    background: -antis-linear-gradient(top, #f68a28,#f36c00);
-    background: linear-gradient(top, #f68a28,#f36c00);
+    background: -webkit-linear-gradient(top, #f68a28, #f36c00);
+    background: -antioz-linear-gradient(top, #f68a28, #f36c00);
+    background: -o-linear-gradient(top, #f68a28, #f36c00);
+    background: -antis-linear-gradient(top, #f68a28, #f36c00);
+    background: linear-gradient(top, #f68a28, #f36c00);
 }
-
 .navbar-header {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
     text-align: center;
     padding-top: 30px;
-    padding-bottom: 30px
+    padding-bottom: 30px;
 }
-.dropdown-toggle{
+.dropdown-toggle {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
-.label{
-    font-size: 0.5em
-}
-
 .post-body h1 {
-    font-size: 130%;
-    text-align: left;
+    font-size: 140%;
 }
 .post-body h2 {
-    font-size: 120%;
+    font-size: 130%;
 }
 .post-body h3 {
-    font-size: 110%;
+    font-size: 120%;
+}
+.table.followers tr {
+    border-bottom: 1px solid #e0e0e0;
 }

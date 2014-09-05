@@ -27,6 +27,21 @@ from . import db, login_manager
 
 
 
+
+"""
+    FOLLOW Class
+"""
+
+class Follow(db.Model):
+    __tablename__ = 'follows'
+    follower_id = db.Column(db.Integer, db.ForeignKey('users.id'),
+                            primary_key=True)
+    followed_id = db.Column(db.Integer, db.ForeignKey('users.id'),
+                            primary_key=True)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+
 """
     ROLE Class
 """
@@ -93,6 +108,32 @@ class User(UserMixin, db.Model):
     last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
     avatar_hash = db.Column(db.String(32))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+
+    # A many-to-many relationship implemented as two one to-many relationship
+    # Follow instances, where each one has the follower and followed back reference
+    # properties set to the respective users. The lazy='joined' mode enables this all
+    # to happen from a single database query. If lazy is set to the default value of
+    # select , then the follower and followed users are loaded lazily when they are
+    # first accessed and each attribute will require an individual query, which means
+    # that obtaining the complete list of followed users would require 100 additional
+    # database queries.
+    # The cascade argument configures how actions performed on a parent object propagate
+    # to related objects. An example of a cascade option is the rule that says that when an
+    # object is added to the database session, any objects associated with it through
+    # relationships should automatically be added to the session as well. The default
+    # cascade options are appropriate for most situations, but there is one case in which
+    # the default cascade options do not work well for this many-to-many relationship.
+    followed = db.relationship('Follow',
+                               foreign_keys=[Follow.follower_id],
+                               backref=db.backref('follower', lazy='joined'),
+                               lazy='dynamic',
+                               cascade='all, delete-orphan')
+    followers = db.relationship('Follow',
+                                foreign_keys=[Follow.followed_id],
+                                backref=db.backref('followed', lazy='joined'),
+                                lazy='dynamic',
+                                cascade='all, delete-orphan')
+
 
 
     def __init__(self, **kwargs):
@@ -239,6 +280,28 @@ class User(UserMixin, db.Model):
 
 
 
+    # the following/follower propriety
+    # this method inserts a Follow instance in the association table
+    # that links a follower with a followed user
+    def follow(self, user):
+        if not self.is_following(user):
+            f = Follow(followed=user)
+            self.followed.append(f)
+
+    def unfollow(self, user):
+        f = self.followed.filter_by(followed_id=user.id).first()
+        if f:
+            self.followed.remove(f)
+
+    def is_following(self, user):
+        return self.followed.filter_by(
+            followed_id=user.id).first() is not None
+
+    def is_followed_by(self, user):
+        return self.followers.filter_by(
+            follower_id=user.id).first() is not None
+
+
 
 
 """
@@ -334,6 +397,5 @@ login_manager.anonymous_user = AnonymousUser
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
 
 

@@ -29,7 +29,7 @@ class Config:
     ANTISOCIAL_MAIL_SENDER = 'The Anti-Social Network Admin <thesuperantisocialnetwork@gmail.com>'
     ANTISOCIAL_ADMIN = os.environ.get('ANTISOCIAL_ADMIN')
     ANTISOCIAL_POSTS_PER_PAGE = 20
-
+    ANTISOCIAL_FOLLOWERS_PER_PAGE = 20
 
     #  takes an application instance as as argument
     @staticmethod
