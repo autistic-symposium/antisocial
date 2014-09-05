@@ -209,8 +209,9 @@ class User(UserMixin, db.Model):
 
 
     # create fake data
+    # User.generate_fake()
     @staticmethod
-    def generate_fake(count=100):
+    def generate_fake(count=10):
         from sqlalchemy.exc import IntegrityError
         from random import seed
         import forgery_py
@@ -251,7 +252,7 @@ class Post(db.Model):
 
     # create fake posts
     @staticmethod
-    def generate_fake(count=100):
+    def generate_fake(count=10):
         from random import seed, randint
         import forgery_py
         seed()
