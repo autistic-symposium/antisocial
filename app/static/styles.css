@@ -45,6 +45,9 @@ div.post-content {
     min-height: 48px;
 
 }
+div.post-footer {
+    text-align: right;
+}
 
 .btn {
     background: #FF9966;
@@ -64,7 +67,12 @@ div.post-content {
     color: #fff;
 }
 
-
+div.pagination {
+    width: 100%;
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
+}
 
 .navbar-anti .navbar-inner {
     background: #f36c00;
@@ -76,14 +84,15 @@ div.post-content {
     background: linear-gradient(top, #f68a28,#f36c00);
 }
 
-
 .navbar-header {
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px
 }
-
 .dropdown-toggle{
     font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+.label{
+    font-size: 0.5em
 }

@@ -2,7 +2,8 @@
     In the MVC paradigm, here we have the main views to the user.
 """
 
-from flask import render_template, redirect, url_for, abort, flash, request, current_app
+from flask import render_template, redirect, url_for, abort, flash, \
+request, current_app
 from flask.ext.login import login_required, current_user
 from . import main
 from .forms import EditProfileForm, EditProfileAdminForm, PostForm
@@ -93,3 +94,13 @@ def edit_profile_admin(id):
     form.location.data = user.location
     form.about_me.data = user.about_me
     return render_template('edit_profile.html', form=form, user=user)
+
+# add a permanent link to posts
+# the urls that will be assigned to blog posts are constructed
+# with the unique id field assigned when the post is inserted in
+# the database
+@main.route('/post/<int:id>')
+def post(id):
+    post = Post.query.get_or_404(id)
+    # we send a list so that _post.htm template can be used
+    return render_template('post.html', posts=[post])
