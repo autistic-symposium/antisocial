@@ -17,12 +17,20 @@ from ..decorators import admin_required, permission_required
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = PostForm()
+    show_followed = False
 
+    # if some data in the post
     if form.validate_on_submit():
         post = Post(body=form.body.data,
                     author=current_user._get_current_object())
         db.session.add(post)
         return redirect(url_for('.index'))
+
+    # show only post by followers
+    if current_user.is_authenticated():
+        show_followed = bool(request.cookies.get('show_followed', ''))
+    if show_followed:
+        query = Post.query
 
     # adding paginating to the posts to load a single page of records,
     # the call to all() is replaced with SQLAlchemy paginate(), this
@@ -33,7 +41,8 @@ def index():
         page, per_page=current_app.config['ANTISOCIAL_POSTS_PER_PAGE'],
         error_out=False)
     posts = pagination.items
-    return render_template('index.html', form=form, posts=posts, pagination=pagination)
+
+    return render_template('index.html', form=form, posts=posts, show_followed=show_followed, pagination=pagination)
 
 
 
