@@ -25,6 +25,22 @@ from . import db, login_manager
 
 
 
+"""
+    PERMISSIONS Class:
+    Users are assigned a discrete role, but the roles are defined in terms of
+    permissions.
+    The default field is true for only one role.
+    The permission fields is an integer used as bit flags, each task will have
+    a bit position, and for each role, the tasks that are allowed for that role
+    have their bits set to 1.
+"""
+
+class Permission:
+    FOLLOW = 0x01
+    COMMENT = 0x02
+    WRITE_ARTICLES = 0x04
+    MODERATE_COMMENTS = 0x08
+    ADMINISTER = 0x80
 
 
 
@@ -382,22 +398,6 @@ db.event.listen(Post.body, 'set', Post.on_changed_body)
 
 
 
-"""
-    PERMISSIONS Class:
-    Users are assigned a discrete role, but the roles are defined in terms of
-    permissions.
-    The default field is true for only one role.
-    The permission fields is an integer used as bit flags, each task will have
-    a bit position, and for each role, the tasks that are allowed for that role
-    have their bits set to 1.
-"""
-
-class Permission:
-    FOLLOW = 0x01
-    COMMENT = 0x02
-    WRITE_ARTICLES = 0x04
-    MODERATE_COMMENTS = 0x08
-    ADMINISTER = 0x80
 
 
 
