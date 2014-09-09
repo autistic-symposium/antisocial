@@ -1,14 +1,14 @@
-"""empty message
+"""comments
 
-Revision ID: 476bf43a6e2f
-Revises: 3159f7e8e416
-Create Date: 2014-09-09 14:14:48.655754
+Revision ID: 51f5ccfba190
+Revises: 2356a38169ea
+Create Date: 2014-01-01 12:08:43.287523
 
 """
 
 # revision identifiers, used by Alembic.
-revision = '476bf43a6e2f'
-down_revision = '3159f7e8e416'
+revision = '51f5ccfba190'
+down_revision = '2356a38169ea'
 
 from alembic import op
 import sqlalchemy as sa
