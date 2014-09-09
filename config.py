@@ -30,6 +30,7 @@ class Config:
     ANTISOCIAL_ADMIN = os.environ.get('ANTISOCIAL_ADMIN')
     ANTISOCIAL_POSTS_PER_PAGE = 20
     ANTISOCIAL_FOLLOWERS_PER_PAGE = 20
+    ANTISOCIAL_COMMENTS_PER_PAGE = 10
 
     #  takes an application instance as as argument
     @staticmethod

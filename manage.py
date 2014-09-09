@@ -10,7 +10,7 @@
 
 import os
 from app import create_app, db
-from app.models import User, Role, Permission, Post
+from app.models import User, Role, Permission, Post, Comment
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
 
@@ -21,7 +21,7 @@ migrate = Migrate(app, db)
 
 def make_shell_context():
     return dict(app=app, db=db, User=User, Role=Role, Permission=Permission,
-                Post=Post)
+                Post=Post, Comment=Comment)
 
 
 # To create/upgrade the databases:
@@ -34,7 +34,7 @@ manager.add_command('db', MigrateCommand)
 
 
 # The manager.command decorator makes it simple to implement custom commands.
-# The name of the decorated function is used as the command name, and the 
+# The name of the decorated function is used as the command name, and the
 # function's docstring is displayed in the help message.
 # to run tests:
 # $ python manage.py test

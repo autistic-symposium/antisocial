@@ -60,3 +60,9 @@ class PostForm(Form):
     # with rich text
     body = PageDownField("Do you have something to say? (Try in Rich Text!)", validators=[Required()])
     submit = SubmitField('Say it!')
+
+
+# For comments in posts
+class CommentForm(Form):
+    body = StringField('Enter your comment', validators=[Required()])
+    submit = SubmitField('Submit')
