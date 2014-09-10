@@ -32,7 +32,7 @@ Get as many friends as you need to feel good about yourself again! Register Toda
 
 
 
-## The Source Code
+## Instructions - Development
 
 The Anti-Social Network was built on Flask&Python. The License is MIT, feel free to play:
 
@@ -54,8 +54,72 @@ The Anti-Social Network was built on Flask&Python. The License is MIT, feel free
 (venv) $ export SECRET_KEY=<choose-a-secrecy>
 ```
 
+
+#### Upgrade your DB:
+
+```
+$ python manage.py db migrate
+$ python manage.py db upgrade
+```
+
 #### Run!
 
 ```
 $ python manage.py runserver
 ```
+
+You can also do:
+
+```
+$ python manage.py shell
+$ python manage.py test
+```
+
+
+
+
+## Instructions - Production
+
+If you want to use the machinery to deploy the app somewhere (MIT License), for example at Heroku:
+
+
+### Use Gunicorn to make it run:
+
+```
+$ gunicorn manage:app
+```
+
+### Use Foreman to Emulate Heroku
+
+```
+$ foreman run python manage.py deploy
+$ foreman start
+```
+
+
+
+### Deploying at Heroku:
+
+#### Configuration
+
+```
+$ heroku create anti-social
+$ heroku addons:add heroku-postgresql:dev
+$ heroku pg:promote HEROKU_POSTGRESQL_ONYX_URL
+$ heroku config:set FLASK_CONFIG=heroku
+$ heroku config:set MAIL_USERNAME="<login>"
+$ heroku config:set MAIL_PASSWORD="<password>"
+$ heroku config
+$ heroku logs
+```
+
+#### Deploy!
+
+```
+$ git add -A
+$ git commit
+$ git push heroku master
+$ heroku run python manage.py deploy
+$ heroku restart
+```
+
