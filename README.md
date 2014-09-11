@@ -1,6 +1,6 @@
 # The Anti-Social Network
 
-Join [https://anti-social.herokuapp.com/](https://anti-social.herokuapp.com/)
+Join at [https://anti-social.herokuapp.com](https://anti-social.herokuapp.com) !!!
 
 ### Are you tired of not having enough online followers in your social networks?
 
@@ -68,7 +68,7 @@ $ python manage.py db upgrade
 $ python manage.py runserver
 ```
 
-You can also do:
+#### You can also do:
 
 ```
 $ python manage.py shell
@@ -80,46 +80,7 @@ $ python manage.py test
 
 ## Instructions - Production
 
-If you want to use the machinery to deploy the app somewhere (MIT License), for example at Heroku:
+If you want to use the machinery to deploy the app somewhere (MIT License).
+[Instructions here](https://coderwall.com/p/pstm1w?i=2&p=1&q=author%3Abt3gl&t%5B%5D=bt3gl).
 
-
-### Use Gunicorn to make it run:
-
-```
-$ gunicorn manage:app
-```
-
-### Use Foreman to Emulate Heroku
-
-```
-$ foreman run python manage.py deploy
-$ foreman start
-```
-
-
-
-### Deploying at Heroku:
-
-#### Configuration
-
-```
-$ heroku create anti-social
-$ heroku addons:add heroku-postgresql:dev
-$ heroku pg:promote HEROKU_POSTGRESQL_ONYX_URL
-$ heroku config:set FLASK_CONFIG=heroku
-$ heroku config:set MAIL_USERNAME="<login>"
-$ heroku config:set MAIL_PASSWORD="<password>"
-$ heroku config
-$ heroku logs
-```
-
-#### Deploy!
-
-```
-$ git add -A
-$ git commit
-$ git push heroku master
-$ heroku run python manage.py deploy
-$ heroku restart
-```
 
