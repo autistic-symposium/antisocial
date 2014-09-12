@@ -42,16 +42,16 @@ The Anti-Social Network was built on Flask&Python. The License is MIT, feel free
 #### Import the dependences:
 
 ```
-(venv) $ pip install -r requirements/*
+(anti) $ pip install -r requirements/*
 ```
 
 ####Import environment variables for user authentications (this can also be added to your .bash):
 
 ```
-(venv) $ export MAIL_USERNAME=<Gmail username>
-(venv) $ export MAIL_PASSWORD=<Gmail password>
-(venv) $ export ANTISOCIAL_ADMIN=<your-email-address>
-(venv) $ export SECRET_KEY=<choose-a-secrecy>
+(anti) $ export MAIL_USERNAME=<Gmail username>
+(anti) $ export MAIL_PASSWORD=<Gmail password>
+(anti) $ export ANTISOCIAL_ADMIN=<your-email-address>
+(anti) $ export SECRET_KEY=<choose-a-secrecy>
 ```
 
 
