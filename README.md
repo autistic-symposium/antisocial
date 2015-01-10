@@ -4,7 +4,7 @@ Join at [https://anti-social.herokuapp.com](https://anti-social.herokuapp.com) !
 
 ### Are you tired of not having enough online followers in your social networks?
 
-Can't you stand the fact that only the cool kids have are popular and have all the "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had more friends to love all your pointless posts?
+Can't you stand the fact that only the cool kids are popular and have all the "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had more friends to love all your pointless posts?
 
 ###Your problems are over!
 
