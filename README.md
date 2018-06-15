@@ -1,4 +1,4 @@
-# The Anti-Social Network
+#  💣The Anti-Social Network 💣
 
 Join at [https://anti-social.herokuapp.com](https://anti-social.herokuapp.com) !!!
 
@@ -6,7 +6,7 @@ Join at [https://anti-social.herokuapp.com](https://anti-social.herokuapp.com) !
 
 Can't you stand the fact that only the cool kids are popular and have all the "likes"? Nobody "stars" or "retweets" your stories? Do you wish you had more friends to love all your pointless posts?
 
-###Your problems are over!
+### Your problems are over!
 
 Get as many friends as you need to feel good about yourself again! Register Today!
 
