@@ -26,7 +26,7 @@ html5lib==1.0b3
 itsdangerous==0.23
 six==1.4.1
 ForgeryPy==0.1
-Pygments==1.6
+Pygments==2.7.4
 colorama==0.2.7
 coverage==3.7.1
 httpie==0.7.2
